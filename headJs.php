@@ -23,7 +23,7 @@
 					else{
 						alert("Please login first！")
 					}
-					window.location.href = "indexHtml.php"
+					window.location.href = "index.php"
 				}
 				else{
 					if( language == "chinese" ){
@@ -32,7 +32,7 @@
 					else{
 						alert("concel success！")
 					}
-					window.location.href = "indexHtml.php"
+					window.location.href = "index.php"
 				}
 			}
 		}

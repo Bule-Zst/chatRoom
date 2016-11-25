@@ -1,3 +1,7 @@
+<?php 
+	error_reporting(E_ALL^E_NOTICE^E_WARNING);
+	session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +69,7 @@
 		<input id="verificationCode" type="text" placeholder="verification code" class="input1">
 		<p id="verificationCodeReturn">&nbsp;</p>
 
-		<input onclick="sendInformation()" class="input2" type="button" value="submit">
+		<input id="submit" onclick="sendInformation()" class="input2" type="button" value="submit">
 	</div>
 </body>
 </html>
@@ -81,6 +85,30 @@
 			window.location.href = 'message.php';
 		}
 		setTimeout( 'countDown()', 1000 );
+	}
+	function changeLanguage(){
+		var xhr = new XMLHttpRequest();
+		xhr.open( 'POST', 'judgeLanguagePhp.php', true );
+		xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+		xhr.onreadystatechange = function(){
+			if( xhr.readyState == 4 && xhr.status == 200){
+				var response = xhr.responseText
+				var language = response
+				console.log(language)
+				console.log(response)
+				switch( language ){
+					case 'english':
+						english()
+						break
+					case 'chinese':
+						chinese()
+						break
+					default:
+						console.log('change language wrong')
+				}
+			}
+		}
+		xhr.send('');
 	}
 	function sendInformation(){
 		//define variate==================================
@@ -127,11 +155,21 @@
 		document.getElementById('headContent5').innerHTML = '布樂聊天室'
 		document.getElementById('blank1').style.width = '15px'
 		document.getElementById('blank2').style.width = '15px'
+		document.getElementById('name').placeholder = '用户名'
+		document.getElementById('password').placeholder = '密码'
+		document.getElementById('repeatPassword').placeholder = '确认密码'
+		document.getElementById('email').placeholder = '邮箱地址'
+		document.getElementById('telephoneNumber').placeholder = '联系方式'
+		document.getElementById('verificationCode').placeholder = '验证码'
+		document.getElementById('submit').placeholder = '提交'
 		var xhr = new XMLHttpRequest();
-		xhr.open( 'POST', './changeLanguage.php', true );
+		xhr.open( 'POST', 'changeLanguagePhp.php', true );
 		xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+		xhr.onreadystatechange = function(){
+			if( xhr.readyState == 4 && xhr.status == 200){
+			}
+		}
 		xhr.send('language=chinese');
-		language = 'chinese'
 	}
 	function english(){
 		document.getElementById('headContent1').innerHTML = 'create group'
@@ -143,11 +181,21 @@
 		document.getElementById('headContent5').innerHTML = '布樂ChatRoom'
 		document.getElementById('blank1').style.width = '23px'
 		document.getElementById('blank2').style.width = '23px'
+		document.getElementById('name').placeholder = 'username'
+		document.getElementById('password').placeholder = 'password'
+		document.getElementById('repeatPassword').placeholder = 'repeat password'
+		document.getElementById('email').placeholder = 'email'
+		document.getElementById('telephoneNumber').placeholder = 'telephone number'
+		document.getElementById('verificationCode').placeholder = 'verification code'
+		document.getElementById('submit').placeholder = 'submit'
 		var xhr = new XMLHttpRequest();
-		xhr.open( 'POST', 'changeLanguage.php', true );
+		xhr.open( 'POST', 'changeLanguagePhp.php', true );
 		xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+		xhr.onreadystatechange = function(){
+			if( xhr.readyState == 4 && xhr.status == 200){
+			}
+		}
 		xhr.send('language=english');
-		language = 'english';
 	}	
 	function changesize(){
 		var screenWidth = document.body.clientWidth;
@@ -181,5 +229,6 @@
 	//assist function=====================================
 	window.onload = function(){
 		changesize()
+		changeLanguage()
 	}
 </script>

@@ -18,12 +18,19 @@
 	$result = mysqli_query( $con, $sql );
 	$test = mysqli_fetch_array( $result );
 	if( $count == 0 ){
-		echo '0';
+		$count = 0;
 	}
 	elseif( $test['password'] != $password ){
-		echo '1';
+		$count = 1;
 	}
 	else{
-		echo '2';
+		$count = 2;
 	}
+	echo '[';
+	echo '{ "number":"';
+	echo $count;
+	echo '","language":"';
+	echo $_SESSION['language'];
+	echo '"}';
+	echo ']';
  ?>

@@ -126,15 +126,13 @@
 		document.getElementById('headContent5').innerHTML = '布樂聊天室'
 		document.getElementById('submit').innerHTML = '提交';
 		var xhr = new XMLHttpRequest();
-		xhr.open( 'POST', './changeLanguagePhp.php', true );
+		xhr.open( 'POST', 'changeLanguagePhp.php', true );
 		xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
 		xhr.onreadystatechange = function(){
 			if( xhr.readyState == 4 && xhr.status == 200){
-				console.log('success1')
 			}
 		}
 		xhr.send('language=chinese');
-		language = 'chinese'
 	}
 	function english(){
 		document.getElementById('headContent1').innerHTML = 'create group'
@@ -146,15 +144,13 @@
 		document.getElementById('headContent5').innerHTML = '布樂ChatRoom'
 		document.getElementById('submit').innerHTML = 'submit';
 		var xhr = new XMLHttpRequest();
-		xhr.open( 'POST', './changeLanguagePhp.php', true );
+		xhr.open( 'POST', 'changeLanguagePhp.php', true );
 		xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
 		xhr.onreadystatechange = function(){
 			if( xhr.readyState == 4 && xhr.status == 200){
-				console.log('success')
 			}
 		}
 		xhr.send('language=english');
-		language = 'english';
 	}
 	function firstShowMessage(){
 		// alert(document.getElementById('content').value);
