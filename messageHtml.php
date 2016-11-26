@@ -205,6 +205,8 @@
 				document.getElementById('headContent'+count).style.width = '200px'
 			}
 			document.getElementById('headContent5').style.width = 500 + 'px'
+			document.getElementById('headContent6').style.width = 500 + 'px'
+			document.getElementById('headContent7').style.width = 500 + 'px'
 			document.getElementById('blank1').style.display = 'inline-block'
 			document.getElementById('blank2').style.display = 'inline-block'
 			document.getElementById('li1').style = 'position: relative;left: 0px'
@@ -216,6 +218,8 @@
 				document.getElementById('headContent'+count).style.width = '130px'
 			}
 			document.getElementById('headContent5').style.width = '360px'
+			document.getElementById('headContent6').style.width = 360 + 'px'
+			document.getElementById('headContent7').style.width = 360 + 'px'
 			document.getElementById('blank1').style.display = 'none'
 			document.getElementById('blank2').style.display = 'none'
 			document.getElementById('li1').style = 'position: relative;left: -10px;'

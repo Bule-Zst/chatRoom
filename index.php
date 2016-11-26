@@ -7,21 +7,22 @@
 		<?php include 'headStyle.php'; ?>
 		p{
 			color:red;
-			font-size: 10px;
+			font-size: 23px;
+			margin-left: 20px;
 		}
 		button{
-			width: 150px;
-			height: 30px;
+			width: 200px;
+			height: 35px;
 		}
 		select{
 			background: #ECFFFF;
 		}
 		.div1{
-			width: 400px;
-			height: 250px;
+			width: 650px;
+			height: 450px;
 			position: absolute;
 			left:50%;
-			margin-left: -200px;
+			margin-left: -325px;
 			top:450px;
 			border: 1px solid black;
 			background: white;
@@ -29,6 +30,12 @@
 		.div2{
 			margin-left: 20px;
 			margin-top: 20px;
+		}
+		input{
+			height: 25px;
+			width: 500px;
+			margin-left: 20px;
+			border: 1px solid;
 		}
 	</style>
 </head>
@@ -38,26 +45,28 @@
 	<div class='div1' style="margin-top: 0px;" id="box">
 
 		<div class='div2'>
-		<b style='font-size: 30px;' id="headLogin">Login</b>
+		<b style='font-size: 60px;margin-left: 20px;' id="headLogin">Login</b>
 
 		<br>
 		<br>
 
-		<input type='text' id='name' placeholder='username' style='width: 300px;'>
+		<input type='text' id='name' placeholder='username'>
 
-		<div style="display: block;height: 25px;">
+		<div style="display: block;height: 37px;">
 		<p id='nameReturn1' style="display: none;color:black;" ><span id='hint'></span><span id="second" >&nbsp;</span><span id='explain'>second to go to the chat room</span></p>
 		<p id="nameReturn2" style="display: none;">&nbsp;</p>
 		<p id="nameReturn3" style="display: inline;">&nbsp;</p>
 		</div>
 
-		<input type='password' id='password' placeholder='password' style='width: 300px;'>
+		<input type='password' id='password' placeholder='password'>
 
-		<p id='passwordReturn'>&nbsp;</p>
+		<div style="display: block;height: 37px;">
+		<p style="display: inline;" id='passwordReturn'>&nbsp;</p>
+		</div>
 
-		<button id="register" onclick='register()'>register</button>
+		<button style="margin-left:20px;" id="register" onclick='register()'>register</button>
 
-		<button id="login" onclick="login()" style='float:right;margin-right:65px;'>login</button>
+		<button id="login" onclick="login()" style='float:right;margin-right:200px;'>login</button>
 		</div>
 
 	</div>
@@ -185,6 +194,8 @@
 				document.getElementById('headContent'+count).style.width = '200px'
 			}
 			document.getElementById('headContent5').style.width = 500 + 'px'
+			document.getElementById('headContent6').style.width = 500 + 'px'
+			document.getElementById('headContent7').style.width = 500 + 'px'
 			console.log(2)
 			document.getElementById('blank1').style.display = 'inline-block'
 			document.getElementById('blank2').style.display = 'inline-block'
@@ -197,6 +208,8 @@
 				document.getElementById('headContent'+count).style.width = '130px'
 			}
 			document.getElementById('headContent5').style.width = '360px'
+			document.getElementById('headContent6').style.width = '360px'
+			document.getElementById('headContent7').style.width = '360px'
 			document.getElementById('blank1').style.display = 'none'
 			document.getElementById('blank2').style.display = 'none'
 			document.getElementById('li1').style = 'position: relative;left: -10px;'

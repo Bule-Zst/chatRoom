@@ -2,11 +2,13 @@
 	echo '
 	function showlist(){
 		var secondBox = document.getElementById("secondBox")
-		secondBox.style = "display:block;position:absolute;"
+		secondBox.style = "display:block;position:absolute"
+		document.getElementById("headContent4").style.visibility = "hidden"
 	}
 	function hiddenlist(){
 		var secondBox = document.getElementById("secondBox")
 		secondBox.style = "display:none;"
+		document.getElementById("headContent4").style.visibility = "visible"
 	}
 	function cancel(){
 		var xhr = new XMLHttpRequest();
@@ -16,8 +18,8 @@
 			console.log(1)
 			if( xhr.readyState == 4 && xhr.status == 200){
 				var response = xhr.responseText
-				if( response == "0" ){
-					if( language == "chinese" ){
+				if( response % 10 == "0" ){
+					if( response / 10 == "1" ){
 						alert("请先登录！")
 					}
 					else{
@@ -26,7 +28,7 @@
 					window.location.href = "index.php"
 				}
 				else{
-					if( language == "chinese" ){
+					if( response / 10 == "1" ){
 						alert("注销成功！")
 					}
 					else{

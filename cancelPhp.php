@@ -1,10 +1,18 @@
 <?php 
 	session_start();
-	if( $_SESSION['name'] == '' ){
-		echo '0';
+	$count = 0;
+	if( $_SESSION['language'] == 'chinese' ){
+		$count += 10;
 	}
 	else{
-		echo '1';
+		$count += 20;
+	}
+	if( $_SESSION['name'] == '' ){
+		echo $count;
+	}
+	else{
+		$count += 1;
+		echo $count;
 		$_SESSION['name'] = '';
 	}
  ?>

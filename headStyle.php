@@ -10,6 +10,8 @@
 			display: inline-block;
 			text-align: center;
 		}.font0{
+			position:absolute;
+			margin-top:10px;
 			width: 500px;
 			color: #fafafa;
 			background: #ECFFFF;
@@ -17,7 +19,7 @@
 			text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
 			font-size: 50px;
 		}.headdiv{
-			display: inline-block;
+			display: block;
 			text-align: center;
 			width:100%;
 			height: 120px;
