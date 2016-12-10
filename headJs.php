@@ -25,7 +25,7 @@
 					else{
 						alert("Please login first！")
 					}
-					window.location.href = "index.php"
+					window.location.href = "indexHtml.php"
 				}
 				else{
 					if( response / 10 == "1" ){
@@ -34,7 +34,7 @@
 					else{
 						alert("concel success！")
 					}
-					window.location.href = "index.php"
+					window.location.href = "indexHtml.php"
 				}
 			}
 		}
